@@ -9,10 +9,18 @@
     <thead>
         <tr>
             <th>Name of Meal</th>
-            <%= meal.MealName%>
+            <th>Originator (Chef)</th>
+            <th>Restaurant</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @meals.each do |meal|%>
+        <tr>
+            <td>
+                <%= meal.MealName%>
             </td>
             <td>
-                <%= link_to meal.chef.ChefName, chef_path(meal.chef) %>
+
             </td>
             <td>
                 <%= link_to meal.restaurant.RestaurantName, restaurant_path(meal.restaurant) %>

@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get 'restaurant/index', to:"restaurant#index"
   get 'restaurant/:id', to:"restaurant#show", as: 'restaurant'
   get 'meal/index', to:"meal#index"
-  get 'meal/:id', to:"meal#show"
+  get 'meal/:id', to:"meal#show", as: 'meal'
 end
