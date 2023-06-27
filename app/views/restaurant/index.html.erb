@@ -1,0 +1,26 @@
+<h1>Restaurant#index</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Restaurant Name</th>
+            <th>Cusine</th>
+            <th>Head Chef</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @restaurants.each do |res|%>
+        <tr>
+            <td>
+                <%= res.RestaurantName%>
+            </td>
+            <td>
+                <%= res.Cuisine %>
+            </td>
+            <td>
+                <%= res.chef.ChefName%>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
