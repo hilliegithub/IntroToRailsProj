@@ -1,31 +1,35 @@
-<h1>List of chefs</h1>
+<h1 class="title is-1">List of chefs</h1>
 
-<%= paginate @chefs %>
-<table>
-    <thead>
-        <tr>
-            <th>Chef Name</th>
-            <th>Chef Age</th>
-            <th>Nationality</th>
-            <th>Restaurant Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @chefs.each do |chef|%>
-        <tr>
-            <td>
-                <%= chef.ChefName%>
-            </td>
-            <td>
-                <%= chef.ChefAge%>
-            </td>
-            <td>
-                <%= chef.Nationality%>
-            </td>
-            <td>
-                <%= chef.restaurant.RestaurantName %>
-            </td>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
+<div class="is-flex is-justify-content-flex-end">
+    <%= paginate @chefs %>
+</div>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Chef Name</th>
+                <th>Chef Age</th>
+                <th>Nationality</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @chefs.each do |chef|%>
+            <tr>
+                <td>
+                    <%= chef.ChefName%>
+                </td>
+                <td>
+                    <%= chef.ChefAge%>
+                </td>
+                <td>
+                    <%= chef.Nationality%>
+                </td>
+                <td>
+                    <%= link_to 'View ->', chef_path(chef) %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

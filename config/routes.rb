@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   root "chef#index"
   get "/about", to:"about#index"
   get 'chef/index', to: "chef#index"
-  get 'chef/:id', to: "chef#show"
+  get 'chef/:id', to: "chef#show", as: 'chef'
   get 'restaurant/index', to:"restaurant#index"
-  get 'restaurant/:id', to:"restaurant#show"
+  get 'restaurant/:id', to:"restaurant#show", as: 'restaurant'
   get 'meal/index', to:"meal#index"
   get 'meal/:id', to:"meal#show"
 end
