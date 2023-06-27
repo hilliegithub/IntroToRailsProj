@@ -1,31 +1,24 @@
-<h1>Restaurant#index</h1>
+<h1 class="title is-1">List Of Restaurants</h1>
 
-<%= paginate @restaurants %>
-<table>
+<div class="is-flex is-justify-content-flex-end">
+    <%= paginate @restaurants %>
+</div>
+
+<div class="container">
+<table class="table">
     <thead>
         <tr>
             <th>Restaurant Name</th>
-            <th>Cusine</th>
-            <th>Head Chef</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @restaurants.each do |res|%>
-        <tr>
-            <td>
-                <%= res.RestaurantName%>
+            <%= res.Cuisine %>
             </td>
             <td>
-                <%= res.Cuisine %>
+                <%= link_to res.chef.ChefName, chef_path(res.chef) %>
             </td>
             <td>
-                <% if res.chefs.count == 0 %>
-                  No Chefs
-                <% else %>
-                <%= res.chefs.first.ChefName %>
-                <% end %>
+                <%= link_to 'View ->', restaurant_path(res)%>
             </td>
         </tr>
         <% end %>
     </tbody>
 </table>
+</div>
