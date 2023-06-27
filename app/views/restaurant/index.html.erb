@@ -18,7 +18,11 @@
                 <%= res.Cuisine %>
             </td>
             <td>
-                <%= res.chef.first %>
+                <% if res.chefs.count == 0 %>
+                  No Chefs
+                <% else %>
+                <%= res.chefs.first.ChefName %>
+                <% end %>
             </td>
         </tr>
         <% end %>
