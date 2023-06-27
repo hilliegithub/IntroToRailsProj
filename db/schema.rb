@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_26_235806) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_27_000336) do
   create_table "chefs", force: :cascade do |t|
     t.string "ChefName"
     t.integer "ChefAge"
     t.string "Nationality"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "restaurant_id", null: false
+    t.index ["restaurant_id"], name: "index_chefs_on_restaurant_id"
   end
 
   create_table "meals", force: :cascade do |t|
@@ -24,6 +26,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_235806) do
     t.string "Image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "restaurant_id", null: false
+    t.index ["restaurant_id"], name: "index_meals_on_restaurant_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -35,4 +39,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_235806) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "chefs", "restaurants"
+  add_foreign_key "meals", "restaurants"
 end
