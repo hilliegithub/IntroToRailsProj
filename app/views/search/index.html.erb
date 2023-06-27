@@ -5,3 +5,8 @@
 <p>
 <%= @choosencuisine %>
 </p>
+
+<%= @restaurants.count %>
+<% @restaurants.each do |res|%>
+                <%= res.RestaurantName%>
+        <% end %>
