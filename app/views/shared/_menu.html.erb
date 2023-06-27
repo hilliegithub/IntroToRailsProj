@@ -1,16 +1,45 @@
-<div>
-    <nav>
-        <%= link_to "Home", root_path %>
-        <%= link_to "Restaurants", restaurant_index_path %>
-        <%= link_to "Chefs", chef_index_path %>
-        <%= link_to "Meals", meal_index_path %>
-    </nav>
-    <div>
-        <%= form_with url: "/search", method: :get do |form| %>
-        <%= form.label :query, "Search for:" %>
-        <%= form.text_field :query %>
-        <%= form.select :cuisine, options_for_select(["All"] + @cuisines) %>
-        <%= form.submit "Search" %>
-        <% end %>
+<nav class="navbar is-link" is-fixed-top role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item is-uppercase has-text-weight-bold" href="/">
+        CHEF REGISTRY
+        </a>
+         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="restuarantmenuitem">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+
     </div>
-</div>
+
+    <div id="restuarantmenuitem" class="navbar-menu">
+        <div class="navbar-start">
+            <%= link_to "Home", root_path, class: "navbar-item" %>
+            <%= link_to "Restaurants", restaurant_index_path, class: "navbar-item" %>
+            <%= link_to "Chefs", chef_index_path, class: "navbar-item" %>
+            <%= link_to "Meals", meal_index_path, class: "navbar-item" %>
+
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item is-flex">
+                <%= form_with url: "/search", method: :get do |form| %>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <%= form.label :query, "Search for:" %>
+                    </div>
+                    <div class="control">
+                        <%= form.text_field :query, class: "input is-link is-small" %>
+                    </div>
+                    <div class="control is-align-items-stretch">
+                        <%= form.select :cuisine, options_for_select(["All"] + @cuisines) %>
+                    </div>
+                    <div class="control">
+                        <%= form.submit "Search",class: "button is-info is-small" %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+
+
+
+</nav>
