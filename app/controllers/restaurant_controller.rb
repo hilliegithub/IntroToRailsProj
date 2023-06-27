@@ -1,6 +1,6 @@
 class RestaurantController < ApplicationController
   def index
-    @restaurants = Restaurant.page(params[:page])
+    @restaurants = Restaurant.order(:Cuisine).page(params[:page])
   end
 
   def show
