@@ -4,11 +4,12 @@
 <div>
     <h3><%= @restaurant.RestaurantName%></h3>
     <p><%= @restaurant.Cuisine%></p>
-    <% if res.chefs.count == 0 %>
+    <% if @restaurant.chefs.count == 0 %>
          No Chefs
     <% else %>
         <p><%= @restaurant.chef.first.ChefName%></p>
     <% end %>
     <p><%= @restaurant.LocationLatitude%></p>
     <p><%= @restaurant.LocationLongitude%></p>
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @restaurant.LocationLatitude%>,<%= @restaurant.LocationLongitude%>&zoom=14&size=400x400&markers=color:red%7Clabel:C%7C<%=@restaurant.LocationLatitude%>,<%=@restaurant.LocationLongitude%>&key=<%= ENV['API_KEY']%>" />
 </div>

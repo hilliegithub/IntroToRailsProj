@@ -31,6 +31,8 @@ gem "faker"
 
 gem "kaminari"
 
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
