@@ -4,7 +4,11 @@
 <div>
     <h3><%= @restaurant.RestaurantName%></h3>
     <p><%= @restaurant.Cuisine%></p>
-    <p><%= @restaurant.chef.first.ChefName%></p>
+    <% if res.chefs.count == 0 %>
+         No Chefs
+    <% else %>
+        <p><%= @restaurant.chef.first.ChefName%></p>
+    <% end %>
     <p><%= @restaurant.LocationLatitude%></p>
     <p><%= @restaurant.LocationLongitude%></p>
 </div>
