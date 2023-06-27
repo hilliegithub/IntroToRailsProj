@@ -1,0 +1,23 @@
+<h1>Meal#index</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name of Meal</th>
+            <th>Originator (Chef)</th>
+            <th>Restaurant</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @meals.each do |meal|%>
+        <tr>
+            <td>
+                <%= meal.MealName%>
+            </td>
+            <td>
+                <%= meal.restaurant.RestaurantName %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

@@ -1,2 +1,10 @@
 <h1>Restaurant#show</h1>
-<p>Find me in app/views/restaurant/show.html.erb</p>
+
+
+<div>
+    <h3><%= @restaurant.RestaurantName%></h3>
+    <p><%= @restaurant.Cuisine%></p>
+    <p><%= @restaurant.chef.first.ChefName%></p>
+    <p><%= @restaurant.LocationLatitude%></p>
+    <p><%= @restaurant.LocationLongitude%></p>
+</div>

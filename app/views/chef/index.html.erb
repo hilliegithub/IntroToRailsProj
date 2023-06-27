@@ -6,6 +6,7 @@
             <th>Chef Name</th>
             <th>Chef Age</th>
             <th>Nationality</th>
+            <th>Restaurant Name</th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +20,9 @@
             </td>
             <td>
                 <%= chef.Nationality%>
+            </td>
+            <td>
+                <%= chef.restaurant.RestaurantName %>
             </td>
         </tr>
         <% end %>
