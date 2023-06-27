@@ -1,6 +1,6 @@
 class MealController < ApplicationController
   def index
-    @meals = Meal.all
+    @meals = Meal.page(params[:page])
   end
 
   def show
