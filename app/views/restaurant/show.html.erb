@@ -1,15 +1,42 @@
-<h1>Restaurant#show</h1>
+<h1 class="title is-1"><%= @restaurant.RestaurantName%></h1>
 
 
-<div>
-    <h3><%= @restaurant.RestaurantName%></h3>
-    <p><%= @restaurant.Cuisine%></p>
+<div class="columns">
+    <div class="column">
+    <h3 class="title is-4">Cuisine: <%= @restaurant.Cuisine%></h3>
+    <span class="title">Chefs featured:</span>
     <% if @restaurant.chefs.count == 0 %>
-         No Chefs
+        <ul>
+            <li class="pl-4">No Chefs currently</li>
+        </ul>
     <% else %>
-        <p><%= @restaurant.chef.first.ChefName%></p>
+        <ul>
+            <% @restaurant.chefs.each do |chef| %>
+            <li class="pl-4"><%= link_to chef.ChefName, chef_path(chef) %></li>
+            <% end %>
+        </ul>
     <% end %>
-    <p><%= @restaurant.LocationLatitude%></p>
-    <p><%= @restaurant.LocationLongitude%></p>
-    <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @restaurant.LocationLatitude%>,<%= @restaurant.LocationLongitude%>&zoom=14&size=400x400&markers=color:red%7Clabel:C%7C<%=@restaurant.LocationLatitude%>,<%=@restaurant.LocationLongitude%>&key=<%= ENV['API_KEY']%>" />
+    <br>
+    <span class="title">Meals served:</span>
+    <% if @restaurant.meals.count == 0 %>
+        No Meals currently
+    <% else %>
+        <ul>
+            <% @restaurant.meals.each do |meal| %>
+            <li class="pl-4"><%= link_to meal.MealName, meal_path(meal) %></li>
+            <% end %>
+        </ul>
+    <% end %>
+    </div>
+    <div class="column">
+        <div class="title is-parent is-8">
+        <article class="tile is-child notification is-info">
+            <p class="title">Located:</p>
+                <figure class="image">
+                    <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @restaurant.LocationLatitude%>,<%= @restaurant.LocationLongitude%>&zoom=14&size=400x400&markers=color:red%7Clabel:C%7C<%=@restaurant.LocationLatitude%>,<%=@restaurant.LocationLongitude%>&key=<%= ENV['API_KE']%>" />
+
+                </figure>
+        </article>
+        </div>
+    </div>
 </div>

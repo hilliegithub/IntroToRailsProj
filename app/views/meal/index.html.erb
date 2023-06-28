@@ -9,8 +9,8 @@
     <thead>
         <tr>
             <th>Name of Meal</th>
-            <th>Originator (Chef)</th>
             <th>Restaurant</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -20,13 +20,10 @@
                 <%= meal.MealName%>
             </td>
             <td>
-
-            </td>
-            <td>
                 <%= link_to meal.restaurant.RestaurantName, restaurant_path(meal.restaurant) %>
             </td>
             <td>
-                <%= link_to 'View ->', meal_path(meal) %>
+                <button class="button"><%= link_to 'View', meal_path(meal) %></button>
             </td>
         </tr>
         <% end %>

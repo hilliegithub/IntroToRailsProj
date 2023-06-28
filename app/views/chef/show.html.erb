@@ -4,22 +4,7 @@
     <div class="column">
     <h3 class="title is-4">Age: <%= @chef.ChefAge%> years</h3>
     <h5 class="title is-5">Nationality: <%= @chef.Nationality%></h5>
-    </div>
-    <div class="column">
-        <div class="tile is-parent is-8">
-      <article class="tile is-child notification is-link">
-        <p class="title">Associated Establishments</p>
-        <p class="subtitle">Select to view...</p>
-        <div class="content">
-          <ul>
-          <% @chef.restaurant.each do |rest| %>
-            <li>
-                <%= link_to rest.RestaurantName, restaurant_path%>
-            </li>
-          <% end %>
-          </ul>
-        </div>
-      </article>
+    <p> Works at: <%= link_to @chef.restaurant.RestaurantName, restaurant_path(@chef.restaurant)%>
     </div>
     </div>
 </div>

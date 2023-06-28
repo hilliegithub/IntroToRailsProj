@@ -2,17 +2,15 @@
 
 <div class="columns">
     <div class="column">
-    <h3 class="title is-4">Made By: <%= link_to @meal.chef.ChefName, chef_path(@meal.chef)%></h3>
     <h5 class="title is-5">Served At: <%= link_to @meal.restaurant.RestaurantName, restaurant_path(@meal.restaurant) %></h5>
-    </div>
-    <div class="column">
-        <div class="tile is-parent is-8">
+
+    <div class="tile is-parent is-8">
       <article class="tile is-child notification is-info">
-          <p class="title">Located:</p>
-          <figure class="image is-2by3">
+        <p class="title">Delicious <%= @meal.MealName %> Image:</p>
+        <figure class="image is-2by3">
             <img src="<%= @meal.Image %>">
-          </figure>
-        </article>
+        </figure>
+      </article>
     </div>
     </div>
 </div>

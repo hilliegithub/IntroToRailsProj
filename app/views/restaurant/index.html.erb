@@ -9,13 +9,21 @@
     <thead>
         <tr>
             <th>Restaurant Name</th>
-            <%= res.Cuisine %>
+            <th>Cusine</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @restaurants.each do |res|%>
+        <tr>
+            <td>
+                <%= res.RestaurantName%>
             </td>
             <td>
-                <%= link_to res.chef.ChefName, chef_path(res.chef) %>
+                <%= res.Cuisine %>
             </td>
             <td>
-                <%= link_to 'View ->', restaurant_path(res)%>
+                <button class="button"><%= link_to 'View', restaurant_path(res) %></button>
             </td>
         </tr>
         <% end %>
