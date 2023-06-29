@@ -1,4 +1,4 @@
-<nav class="navbar is-link" is-fixed-top role="navigation" aria-label="main navigation">
+<nav class="navbar is-link is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item is-uppercase has-text-weight-bold" href="/">
         CHEF REGISTRY
@@ -23,18 +23,19 @@
         <div class="navbar-end">
             <div class="navbar-item is-flex">
                 <%= form_with url: "/search", method: :get do |form| %>
-                <div class="field is-grouped">
-                    <div class="control">
-                        <%= form.label :query, "Search for:" %>
-                    </div>
-                    <div class="control">
-                        <%= form.text_field :query, class: "input is-link is-small" %>
-                    </div>
-                    <div class="control is-align-items-stretch">
-                        <%= form.select :cuisine, options_for_select(["All"] + @cuisines) %>
-                    </div>
-                    <div class="control">
-                        <%= form.submit "Search",class: "button is-info is-small" %>
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <%= form.label :query, "Search for:" %>
+                        </div>
+                        <div class="control">
+                            <%= form.text_field :query, class: "input is-link is-small" %>
+                        </div>
+                        <div class="control is-align-items-stretch">
+                            <%= form.select :cuisine, options_for_select(["All"] + @cuisines) %>
+                        </div>
+                        <div class="control">
+                            <%= form.submit "Search",class: "button is-dark is-small" %>
+                        </div>
                     </div>
                 <% end %>
             </div>

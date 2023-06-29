@@ -29,7 +29,7 @@
                     <%= chef.Nationality%>
                 </td>
                 <td>
-                    <button class="button"><%= link_to 'View', chef_path(chef) %></button>
+                    <%= link_to 'View', chef_path(chef), class: "button is-link" %>
                 </td>
             </tr>
             <% end %>

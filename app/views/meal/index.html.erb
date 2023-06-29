@@ -25,7 +25,7 @@
                 <%= link_to meal.restaurant.RestaurantName, restaurant_path(meal.restaurant) %>
             </td>
             <td>
-                <button class="button"><%= link_to 'View', meal_path(meal) %></button>
+                <%= link_to 'View', meal_path(meal), class: "button is-link" %>
             </td>
         </tr>
         <% end %>

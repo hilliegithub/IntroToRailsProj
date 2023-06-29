@@ -35,7 +35,7 @@
         <article class="tile is-child notification is-info">
             <p class="title">Located:</p>
                 <figure class="image">
-                    <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @restaurant.LocationLatitude%>,<%= @restaurant.LocationLongitude%>&zoom=14&size=400x400&markers=color:red%7Clabel:C%7C<%=@restaurant.LocationLatitude%>,<%=@restaurant.LocationLongitude%>&key=<%= ENV['API_KEY']%>" />
+                    <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @restaurant.LocationLatitude%>,<%= @restaurant.LocationLongitude%>&zoom=14&size=400x400&markers=color:red%7Clabel:C%7C<%=@restaurant.LocationLatitude%>,<%=@restaurant.LocationLongitude%>&key=<%= ENV['API_KEY']%>" alt="Location" />
 
                 </figure>
         </article>
